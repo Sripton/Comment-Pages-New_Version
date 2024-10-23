@@ -8,6 +8,28 @@ function closeBtnActions(btnClosetElement) {
   commentBtnElement.classList.remove("show-actions");
 }
 
+function likeComments(button) {
+  let like = parseInt(button.textContent);
+  button.textContent = `${like + 1}`;
+}
+function dislikeComments(button) {
+  let dislike = parseInt(button.textContent);
+  button.textContent = `${dislike + 1}`;
+}
+
+function editComments(button) {
+  const commentTextElemnt = button
+    .closest(".comment")
+    .querySelector(".comment-text");
+  const newText = prompt("Edit yours text", commentTextElemnt.textContent);
+  commentTextElemnt.textContent = newText;
+}
+
+function deleteComment(button) {
+  const removeComment = button.closest(".comment");
+  removeComment.remove();
+}
+
 function showReplies(button) {
   // Проверяем, есть ли уже форма ответа
   const existingForm = button.closest(".comment").querySelector(".add-comment");
@@ -24,7 +46,6 @@ function showReplies(button) {
   const repliesDiv = commentElement.querySelector(".replies");
   repliesDiv.appendChild(replyFormClone);
 }
-
 
 function postReply(button) {
   const postForm = button.closest(".add-comment");

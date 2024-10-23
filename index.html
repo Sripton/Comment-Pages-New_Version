@@ -12,25 +12,25 @@
         <button class="toggle-comments-btn" onclick="toggleComments(this)">
           Show Comments
         </button>
-
         <div class="comment-list">
           <div class="comment">
             <p class="comment-text">
               This is the first comment. Great article!
             </p>
             <div class="comment-actions">
-              <button class="like-btn">
+              <button class="like-btn" onclick="likeComments(this)">
                 <ion-icon class="thumbs" name="thumbs-up-outline"></ion-icon> 0
               </button>
-              <button class="dislike-btn">
+
+              <button class="dislike-btn" onclick="dislikeComments(this)">
                 <ion-icon class="thumbs" name="thumbs-down-outline"></ion-icon>
                 0
               </button>
               <button class="reply-btn" onclick="showReplies(this)">
                 Reply
               </button>
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Delete</button>
+              <button class="edit-btn" onclick="editComments(this)">Edit</button>
+              <button class="delete-btn" onclick="deleteComment(this)">Delete</button>
             </div>
             <div class="dots" onclick="toggleDotsActions(this)">
               &#x2022;&#x2022;&#x2022;

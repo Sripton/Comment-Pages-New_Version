@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.comments-container {
+  background-color: #6e83ca;
+  height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+.comment-section {
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.toggle-comments-btn {
+  padding: 10px 18px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-comments-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.comment-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.toggle-comments-btn {
+  padding: 4px 6px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2px;
+  transition: background-color 0.3s ease;
+}
+.toggle-comments-btn:hover {
+  background-color: #e0e0e0;
+}
+.comment {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+.comment-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+.comment-note {
+  font-size: 0.8rem; /* Уменьшенный размер шрифта */
+  color: #777; /* Серый цвет для меньшего выделения */
+  display: block; /* Отображение в новой строке */
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 10px;
+}
+.comment-actions {
+  display: flex;
+  gap: 18px;
+}
+.comment-actions button {
+  padding: 5px 9px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease box-shadow 0.3s ease;
+}
+.comment-actions button:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.thumbs {
+  margin-right: 4px;
+}
+
+.comment-actions .like-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.comment-actions .dislike-btn:hover {
+  background-color: #dc3545;
+  color: white;
+}
+/* .show-actions .comment-actions {
+  display: flex;
+} */
+
+.dots {
+  display: none;
+  cursor: pointer;
+}
+/* .show-actions .dots {
+  display: none;
+} */
+
+.close-btn {
+  cursor: pointer;
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+/* .show-actions .close-btn {
+  display: inline-block;
+} */
+
+/* Добавление комментария  */
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.add-comment textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.add-comment textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.add-comment button {
+  align-self: flex-end;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.add-comment button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+.add-comment button:active {
+  transform: translateY(0);
+}
+/* .replies {
+  margin-left: 30px;
+  margin-top: 10px;
+  padding-left: 15px;
+  border-left: 3px solid #ddd;
+} */
+.replies {
+  margin-top: 10px;
+  margin-left: 30px;
+  padding-left: 15px;
+  border-left: 3px solid #ddd;
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .comment-section {
+    padding: 15px;
+  }
+  .comment {
+    padding: 10px;
+  }
+  .comment .comment-text {
+    font-size: 1.2rem;
+  }
+  .comment-actions button {
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-section {
+    padding: 10px;
+  }
+  .comment-actions {
+    gap: 10px;
+    display: none;
+  }
+  .comment-actions button {
+    padding: 3px 7px;
+  }
+
+  .dots {
+    display: inline-block;
+  }
+
+  /* Когда кнопки видимы, скрываем три точки */
+  .show-actions .dots {
+    display: none;
+  }
+
+  /* Когда кнопки видимы, показываем их и кнопку "X" */
+  .show-actions .comment-actions {
+    display: flex;
+  }
+  .show-actions .close-btn {
+    display: inline-block;
+  }
+}
